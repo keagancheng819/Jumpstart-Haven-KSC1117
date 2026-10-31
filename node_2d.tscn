@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://d4cxq3lqf46lp"]
+
+[ext_resource type="Script" uid="uid://dr3ihown70604" path="res://hedgehog.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://ch8wu84dwknlb" path="res://animation frames/walk5.png" id="2_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://c1i7c5v3jkttc" path="res://animation frames/jump1.png" id="3_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://c6sp85e6e2tr1" path="res://animation frames/jump2.png" id="4_hqns4"]
+[ext_resource type="Texture2D" uid="uid://08yvo47qpac1" path="res://animation frames/jump3.png" id="5_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://cjwo6551yikja" path="res://animation frames/walk1.png" id="6_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://bqdbp2jt6g62r" path="res://animation frames/walk2.png" id="7_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://bhg30g6dvmf77" path="res://animation frames/walk3.png" id="8_d2bti"]
+[ext_resource type="Texture2D" uid="uid://cjqt1wfkosiuf" path="res://animation frames/walk4.png" id="9_ta5nu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a80gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4d7sh")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ir8iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hqns4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x0ka3")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0h7mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nr8wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d2bti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4d7sh")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddgae"]
+radius = 61.0
+height = 164.0
+
+[node name="Node2D" type="Node2D" unique_id=941126863]
+
+[node name="Hedgehog" type="CharacterBody2D" parent="." unique_id=437553438]
+script = ExtResource("1_wtcfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hedgehog" unique_id=213300306]
+position = Vector2(5.0975533, 0)
+scale = Vector2(0.9387195, 1)
+sprite_frames = SubResource("SpriteFrames_a80gx")
+animation = &"walk"
+frame_progress = 0.52104783
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hedgehog" unique_id=1726965068]
+shape = SubResource("CapsuleShape2D_ddgae")
+
+[node name="Camera2D" type="Camera2D" parent="Hedgehog" unique_id=1973211304]

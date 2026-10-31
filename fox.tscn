@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://igixgks2bcx2"]
+
+[ext_resource type="Script" uid="uid://br7ae3aa8q10j" path="res://fox.gd" id="1_8x0u3"]
+[ext_resource type="Texture2D" uid="uid://berig6hnlaiol" path="res://animation frames/fox-removebg-preview.png" id="2_kpck0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvs3t"]
+size = Vector2(256, 132)
+
+[node name="Node2D" type="Node2D" unique_id=181001070]
+
+[node name="fox" type="Area2D" parent="." unique_id=2094250418]
+script = ExtResource("1_8x0u3")
+
+[node name="Sprite2D" type="Sprite2D" parent="fox" unique_id=1388470702]
+position = Vector2(-116.769226, 66)
+scale = Vector2(0.53846157, 0.53846157)
+texture = ExtResource("2_kpck0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fox" unique_id=1478755799]
+position = Vector2(-100, 63)
+shape = SubResource("RectangleShape2D_bvs3t")

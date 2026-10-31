@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bs52ph26yrnyi"]
+
+[ext_resource type="Script" uid="uid://bvgty3mbiscog" path="res://slug.gd" id="1_gtaqd"]
+[ext_resource type="Texture2D" uid="uid://dfuqjyayn1uox" path="res://animation frames/slug-removebg-preview.png" id="2_jc7m8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btpg3"]
+size = Vector2(266, 152)
+
+[node name="Node2D" type="Node2D" unique_id=1311613023]
+
+[node name="Slug" type="Area2D" parent="." unique_id=499626589]
+script = ExtResource("1_gtaqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slug" unique_id=1243349598]
+texture = ExtResource("2_jc7m8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slug" unique_id=1808981863]
+position = Vector2(12, 4)
+shape = SubResource("RectangleShape2D_btpg3")
